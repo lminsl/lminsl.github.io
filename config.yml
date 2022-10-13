@@ -72,14 +72,13 @@ params:
         buttons:
             - name: Blog
               url: archives
-            - name: Github
-              url: "https://github.com/lminsl"
-            - name: Linkedin
-              url: "https://www.linkedin.com/in/minjae-kwon/"
+            ## add cv section
 
     socialIcons:
         - name: github
           url: "https://github.com/lminsl"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/minjae-kwon/"
         - name: Rss
           url: "index.xml"
 
