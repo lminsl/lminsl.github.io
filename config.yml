@@ -64,16 +64,18 @@ params:
 
     profileMode:
         enabled: true
-        title: Unnamed
+        title: unnamed blog
         # imageUrl: "#"
         # imageTitle: my image
         # imageWidth: 120
         # imageHeight: 120
         buttons:
-            - name: Archives
+            - name: Blog
               url: archives
             - name: Github
               url: "https://github.com/lminsl"
+            - name: Linkedin
+              url: "https://www.linkedin.com/in/minjae-kwon/"
 
     socialIcons:
         - name: github
