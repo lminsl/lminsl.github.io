@@ -24,21 +24,15 @@ languages:
           category: categories
           tag: tags
           series: series
-        menu:
+        menu: # set upper-right menu here
             main:
-                - name: Archive
+                - name: Blog Archive
                   url: archives
                   weight: 5
                 - name: Search
                   url: search/
                   weight: 10
-                - name: Tags
-                  url: tags/
-                  weight: 10
-                - name: WiKi
-                  url: https://github.com/adityatelange/hugo-PaperMod/wiki/
-                - name: Discord
-                  url: https://discord.gg/ahpmTvhVmp
+                ## add cv here
 
 outputs:
     home:
@@ -54,7 +48,8 @@ params:
 
     defaultTheme: auto
     # disableThemeToggle: true
-    ShowShareButtons: true
+
+    ShowShareButtons: false
     ShowReadingTime: true
     # disableSpecial1stPost: true
     displayFullLangName: true
