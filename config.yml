@@ -1,5 +1,5 @@
 baseURL: "https://lminsl.github.io/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
-title: unnamed blog
+title: unnamed
 paginate: 5
 theme: hugo-PaperMod
 
@@ -42,7 +42,7 @@ outputs:
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: unnamed blog
+    title: unnamed
     description: "Minjae's personal blog"
     author: Minjae
     # author: ["Me", "You"] # multiple authors
@@ -64,7 +64,7 @@ params:
 
     profileMode:
         enabled: true
-        title: unnamed blog
+        title: unnamed
         # imageUrl: "#"
         # imageTitle: my image
         # imageWidth: 120
