@@ -42,8 +42,9 @@ outputs:
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-    author: Theme PaperMod
+    title: unnamed blog
+    description: "Minjae's personal blog"
+    author: Minjae
     # author: ["Me", "You"] # multiple authors
 
     defaultTheme: auto
@@ -62,34 +63,21 @@ params:
     images: ["papermod-cover.png"]
 
     profileMode:
-        enabled: false
-        title: PaperMod
-        imageUrl: "#"
-        imageTitle: my image
+        enabled: true
+        title: Unnamed
+        # imageUrl: "#"
+        # imageTitle: my image
         # imageWidth: 120
         # imageHeight: 120
         buttons:
             - name: Archives
               url: archives
-            - name: Tags
-              url: tags
-
-    homeInfoParams:
-        Title: "PaperMod"
-        Content: >
-            Welcome to demo of hugo's theme PaperMod.
-
-            - **PaperMod** is a simple but fast and responsive theme with useful feature-set that enhances UX.
-
-            - Do give a 🌟 on Github !
-
-            - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper).
+            - name: Github
+              url: "https://github.com/lminsl"
 
     socialIcons:
         - name: github
-          url: "https://github.com/adityatelange/hugo-PaperMod"
-        - name: KoFi
-          url: "https://ko-fi.com/adityatelange"
+          url: "https://github.com/lminsl"
         - name: Rss
           url: "index.xml"
 
