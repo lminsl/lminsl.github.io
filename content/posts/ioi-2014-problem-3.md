@@ -3,24 +3,16 @@ layout: article
 title: A problem from IOI 2014
 date: 2020-03-21T12:32:17+09:00 ## ISO time notation
 tags: ["IOI", "graphs"]
-author: "Me"
 showToc: false
-draft: false
-hidemeta: false
-comments: false
 ShowWordCount: false
-ShowRssButtonInSectionTermList: true
-UseHugoToc: true
+math: true
 ---
-
-Note: This is copy-and-pasted from [My AoPS blog][aops blog].
 
 While solving some competitive programming problems, I found that [IOI 2014 Problem 3][ioi_2014_3], rephrased below in mathematical terms, is quite interesting.
 
-Let $n \ge 3$ be an integer. Alice and Bob play a game based on a graph of $n$ points, each labeled from $0$ to $n-1$. The graph is initially empty. In the $i^{\text{th}}$ round of the game, the following occurs in order: \
+Let \(n \ge 3\) be an integer. Alice and Bob play a game based on a graph of $n$ points, each labeled from $0$ to $n-1$. The graph is initially empty. In the $i^{\text{th}}$ round of the game, the following occurs in order: \
 Alice picks a pair of integers $(u,v)$ such that $0\le u < v \le n-1$ that she didn't pick before, then Bob chooses whether $\{u, v\}$ should be an edge or not. If Bob chooses $\{u, v\}$ to be an edge, then the edge connecting $\{u, v\}$ is added to the graph. (Note that there are exactly $\binom{n}{2}$ rounds.) \
 Alice wins if, before the last round, she can guarantee whether the graph is connected or not. Bob wins otherwise. Help Bob win the game.
-{:.info}
 
 ---
 
