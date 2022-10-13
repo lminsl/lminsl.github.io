@@ -59,6 +59,7 @@ params:
     ShowCodeCopyButtons: true
     ShowRssButtonInSectionTermList: true
     ShowToc: true
+    tocopen: true
     # comments: false
     images: ["papermod-cover.png"]
 
