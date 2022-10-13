@@ -26,7 +26,7 @@ languages:
           series: series
         menu: # set upper-right menu here
             main:
-                - name: Blog Archive
+                - name: Blog
                   url: archives
                   weight: 5
                 - name: Search
@@ -84,7 +84,7 @@ params:
           url: "index.xml"
 
     editPost:
-        URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+        URL: "https://github.com/lminsl/lminsl.github.io/content"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
