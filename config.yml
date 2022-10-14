@@ -84,7 +84,7 @@ params:
           url: "index.xml"
 
     editPost:
-        URL: "https://github.com/lminsl/lminsl.github.io/content"
+        URL: "https://github.com/lminsl/lminsl.github.io/tree/main/content/"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
