@@ -32,10 +32,9 @@ languages:
                 - name: Search
                   url: search/
                   weight: 10
-                - name: cv
+                - name: CV
                   url: cv
                   weight: 15
-                ## add cv here
 
 outputs:
     home:
@@ -45,7 +44,7 @@ outputs:
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: unnamed
+    title: unnamed # change title name
     description: "Minjae's personal blog"
     author: Minjae
     # author: ["Me", "You"] # multiple authors
