@@ -32,6 +32,9 @@ languages:
                 - name: Search
                   url: search/
                   weight: 10
+                - name: cv
+                  url: cv
+                  weight: 15
                 ## add cv here
 
 outputs:
