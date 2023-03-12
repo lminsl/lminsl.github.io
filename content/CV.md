@@ -1,6 +1,6 @@
 ---
 title: "CV"
-url: "/cv"
+url: "/cvtest"
 summary: "cv"
 ---
 
