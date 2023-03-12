@@ -4,4 +4,4 @@ url: "/cvtest"
 summary: "cv"
 ---
 
-[hi](./cv_0301.pdf)
+<a href="https://lminsl.github.io/cv/cv.pdf">mypdf</a>
