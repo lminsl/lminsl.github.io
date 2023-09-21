@@ -4,20 +4,19 @@ url: "/cvtest"
 summary: "cv"
 ---
 
-    <div>
-      <object
+<div>
+    <object
         data='/cv/cv.pdf'
         type="application/pdf"
         width="500"
         height="678"
-      >
-
-        <iframe
+    >
+    <iframe
           src='/cv/cv.pdf'
           width="500"
           height="678"
-        >
-        <p>This browser does not support PDF!</p>
-        </iframe>
-      </object>
-    </div>
+    >
+    <p>This browser does not support PDF!</p>
+    </iframe>
+    </object>
+</div>
