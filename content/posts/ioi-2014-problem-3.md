@@ -31,9 +31,9 @@ On the other hand, if Bob chooses to not add $e$, then Alice could claim that th
 - all edges between $S$ and $V(G)-S$, except $e$, are already chosen and not an edge of the graph;
 - the subgraph induced by $S$ and $V(G)-S$ are both connected, but not all edges were chosen before.
 
-<p align="center">
-    <img class="image image--xl" src="./images/ioi_2014_3_image.png">
-</p>
+
+![test][images/ioi_2014_3_image.png]
+
 
 Hence Bob loses if there is a set $S \subseteq V(G)$ such that $S$ is connected and there is an unchosen edge inside $S$. To avoid this, Bob should add the edge $\{u, v\}$ if all edges between $u$ and the component containing $v$, and all edges between $v$ and the component containing $u$ are chosen before. Bob should not add the edge otherwise. From the above discussions, it is clear that Alice cannot win. Thus we are done. $\blacksquare$
 
