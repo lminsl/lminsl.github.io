@@ -1,7 +1,5 @@
 ---
-title: "CV"
 url: "/cvtest"
-summary: "cv"
 ---
 
 <div>
