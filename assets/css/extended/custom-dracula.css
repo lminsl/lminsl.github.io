@@ -3,12 +3,12 @@
 }
 
 /* title */ .logo {
-    letter-spacing: .1rem;
+    letter-spacing: .05rem;
 }
 
-/* menu */ #menu {
+/* menu */ #menu a {
     font-size: 1.3em;
-    letter-spacing: .1rem;
+    letter-spacing: .05rem;
 }
 
 /* Background */ .bg { color: #f8f8f2; background-color: #282a36; }
