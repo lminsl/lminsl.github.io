@@ -1,6 +1,5 @@
 /* Body */ body { 
     font-family: 'Neuton', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    letter-spacing: .05rem;
 }
 
 /* Background */ .bg { color: #f8f8f2; background-color: #282a36; }
