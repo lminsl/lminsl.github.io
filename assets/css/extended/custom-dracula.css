@@ -1,16 +1,15 @@
 /* body */ body { 
     font-family: 'Neuton', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: .05rem !important;
 }
 
 /* title */ .logo a {
     font-size: 24px !important;
-    letter-spacing: .05rem !important;
     font-weight: 700;
 }
 
 /* menu */ #menu a {
     font-size: 20px !important;
-    letter-spacing: .05rem;
 }
 
 /* Background */ .bg { color: #f8f8f2; background-color: #282a36; }
