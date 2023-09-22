@@ -2,12 +2,14 @@
     font-family: 'Neuton', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* title */ .logo {
-    letter-spacing: .05rem;
+/* title */ .logo a {
+    font-size: 24px !important;
+    letter-spacing: .05rem !important;
+    font-weight: 700;
 }
 
 /* menu */ #menu a {
-    font-size: 1.3em;
+    font-size: 20px !important;
     letter-spacing: .05rem;
 }
 
