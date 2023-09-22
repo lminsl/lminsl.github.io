@@ -31,9 +31,9 @@ languages:
                 - name: Blog
                   url: archives
                   weight: 5
-                - name: Search
-                  url: search/
-                  weight: 10
+                # - name: Search
+                #   url: search/
+                #   weight: 10
 
 outputs:
     home:
@@ -44,7 +44,7 @@ outputs:
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     title: Minjae Kwon # change title name
-    description: "Minjae's personal blog"
+    description: "Minjae's webpage"
     author: Minjae
     # author: ["Me", "You"] # multiple authors
 
@@ -62,27 +62,18 @@ params:
     ShowToc: true
     tocopen: true
     # comments: false
-    images: ["papermod-cover.png"]
+    # images: ["papermod-cover.png"]
 
     profileMode:
         enabled: true
-        title: unnamed
-        # imageUrl: "#"
-        # imageTitle: my image
-        # imageWidth: 120
-        # imageHeight: 120
-        buttons:
-            - name: Blog
-              url: archives
-            ## add cv section
 
-    socialIcons:
-        - name: github
-          url: "https://github.com/lminsl"
-        - name: linkedin
-          url: "https://www.linkedin.com/in/minjae-kwon/"
-        - name: Rss
-          url: "index.xml"
+    # socialIcons:
+    #     - name: github
+    #       url: "https://github.com/lminsl"
+    #     - name: linkedin
+    #       url: "https://www.linkedin.com/in/minjae-kwon/"
+    #     - name: Rss
+    #       url: "index.xml"
 
     # editPost:
     #     URL: "https://github.com/lminsl/lminsl.github.io/tree/main/content/"
