@@ -1,5 +1,9 @@
-/* Body */ body { 
+/* HTML */ html { 
     font-family: 'Neuton', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* title */ .logo {
+    letter-spacing: .1rem;
 }
 
 /* Background */ .bg { color: #f8f8f2; background-color: #282a36; }
