@@ -132,6 +132,9 @@ markup:
         # lineNos: true
         # style: monokai
 
+copyright:
+    _merge: false
+
 privacy:
     vimeo:
         disabled: false
