@@ -15,6 +15,7 @@
     line-height: 1.6 !important;
     text-align: left !important;
     flex-direction: column;
+    column-gap: 2em;
 }
 
 /* title */ .logo a {
