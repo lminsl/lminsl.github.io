@@ -1,8 +1,10 @@
 <div class="profile">
     {{- with site.Params.profileMode }}
     <section class="intro">
+        <h3>Thanks for visiting my webpage!</h3>
+        
         <div>
-            <h3>Thanks for visiting my webpage! </h3> My name is Minjae, and I was an undergraduate student at Princeton until 2022,
+            My name is Minjae, and I was an undergraduate student at Princeton until 2022,
             after which I took a leave of absence to serve at the Republic of Korea's Air Force. 
             I am expected to be discharged in July 2024 and will return to Princeton shortly after.  
         </div>
@@ -20,8 +22,15 @@
 
     <section class="courses">
         Here's a table of subjects that I've either taken from some institution or have self-studied.
+        
         <table class="courselist">
-
+            <thead>
+                <th scope = "column">Term</th>  
+                <th scope = "column">Subject</th>  
+                <th scope = "column">Book</th>  
+                <th scope = "column">Associated Lecture(s)</th>  
+            </thead>
+            
         </table>
     </section>
 
