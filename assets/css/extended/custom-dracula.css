@@ -11,8 +11,9 @@
     padding: var(--gap);
 }
 
-/* profile */ .profile {
+/* profile */ .main .profile {
     line-height: 1.6 !important;
+    text-align: left !important;
 }
 
 /* title */ .logo a {
