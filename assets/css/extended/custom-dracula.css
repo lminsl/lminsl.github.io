@@ -38,6 +38,7 @@
 }
 
 .course-list .course-element {
+    font-size: 0.7rem !important;
     border: solid;
 }
 
