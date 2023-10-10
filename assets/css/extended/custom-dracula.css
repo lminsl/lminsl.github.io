@@ -11,6 +11,10 @@
     padding: var(--gap);
 }
 
+/* profile */ .profile {
+    line-height: 120% !important;
+}
+
 /* title */ .logo a {
     font-size: 24px !important;
     font-weight: 700;
