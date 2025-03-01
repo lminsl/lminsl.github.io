@@ -1,7 +1,10 @@
 baseURL: "https://lminsl.github.io/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
 title: Minjae Kwon
-paginate: 5
 theme: hugo-PaperMod
+
+# Update from deprecated 'paginate'
+pagination:
+  pagerSize: 5
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -11,6 +14,9 @@ buildExpired: false
 enableEmoji: true
 pygmentsUseClasses: true
 
+defaultContentLanguage: "en"
+languageCode: "en-us"
+
 minify:
     disableXML: true
     # minifyOutput: true
@@ -19,10 +25,12 @@ languages:
     en:
         languageName: "English"
         weight: 1
+        languageCode: "en-us"
         taxonomies:
           category: categories
           tag: tags
           series: series
+          social: social  # Add social taxonomy
         menu: # set upper-right menu here
             main:
                 - name: CV
@@ -66,14 +74,24 @@ params:
 
     profileMode:
         enabled: true
+        title: Minjae Kwon
+        subtitle: "Welcome to my personal website"
+        imageUrl: ""
+        imageTitle: ""
+        buttons:
+            - name: Archives
+              url: archives
+            - name: CV
+              url: cv/cv.pdf
 
-    # socialIcons:
-    #     - name: github
-    #       url: "https://github.com/lminsl"
-    #     - name: linkedin
-    #       url: "https://www.linkedin.com/in/minjae-kwon/"
-    #     - name: Rss
-    #       url: "index.xml"
+    # Move social icons here under params
+    socialIcons:
+        - name: github
+          url: "https://github.com/lminsl"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/minjae-kwon/"
+        - name: Rss
+          url: "index.xml"
 
     # editPost:
     #     URL: "https://github.com/lminsl/lminsl.github.io/tree/main/content/"
@@ -127,8 +145,7 @@ privacy:
     vimeo:
         disabled: false
         simple: true
-
-    twitter:
+    x:  # Updated from twitter
         disabled: false
         enableDNT: true
         simple: true
@@ -144,5 +161,5 @@ privacy:
 services:
     instagram:
         disableInlineCSS: true
-    twitter:
+    x:  # Updated from twitter
         disableInlineCSS: true

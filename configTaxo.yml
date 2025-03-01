@@ -11,11 +11,10 @@ privacy:
     disabled: false
     simple: true
 
-  twitter:
+  x:
     disabled: false
     enableDNT: true
     simple: true
-    disableInlineCSS: true
 
   instagram:
     disabled: false
