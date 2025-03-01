@@ -32,7 +32,11 @@ languages:
           series: series
           social: social  # Add social taxonomy
         menu: # set upper-right menu here
-            main: []  # Empty array instead of commented items
+            main:
+                - identifier: olympiad
+                  name: Olympiad
+                  url: /olympiad/
+                  weight: 10
 
 outputs:
     home:

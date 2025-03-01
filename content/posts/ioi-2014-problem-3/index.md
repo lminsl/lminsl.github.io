@@ -8,7 +8,9 @@ ShowWordCount: false
 math: true
 ---
 
-While solving some competitive programming problems, I found that [IOI 2014 Problem 3][ioi_2014_3], rephrased below, is quite interesting.
+Competitive programming problems turn out to be helpful for math olympiad training (and it's fun too)!
+
+Let us look at [IOI 2014 Problem 3][ioi_2014_3]:
 
 Let $n \ge 3$ be an integer. Alice and Bob play a game based on a graph of $n$ points, each labeled from $0$ to $n-1$. The graph is initially empty. In the $i^{\text{th}}$ round of the game, the following occurs in order:
 
