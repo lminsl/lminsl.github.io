@@ -1,13 +1,13 @@
 .social-links {
     display: flex;
-    gap: 40px;
-    margin: 30px 0;
+    gap: 60px;
+    margin: 40px 0;
     justify-content: center;
 }
 
 .social-links a {
     color: var(--primary);
-    font-size: 32px;
+    font-size: 64px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
