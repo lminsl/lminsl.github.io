@@ -7,9 +7,19 @@
 
 .social-links a {
     color: var(--primary);
-    font-size: 64px;
     text-decoration: none;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.social-links a i {
+    font-size: 64px;
+}
+
+.social-links .substack-icon {
+    width: 64px;
+    height: 64px;
 }
 
 .social-links a:hover {
