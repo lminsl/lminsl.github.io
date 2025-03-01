@@ -1,6 +1,5 @@
 ---
 title: "Olympiad"
-description: "My Olympiad Experience and Achievements"
 draft: false
 ---
 
