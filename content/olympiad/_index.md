@@ -4,7 +4,7 @@ description: "My Olympiad Experience and Achievements"
 draft: false
 ---
 
-.... this is AI-written; to be fixed.
+.... under construction
 
 
 
