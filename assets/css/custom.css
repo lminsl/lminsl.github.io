@@ -14,12 +14,12 @@
 }
 
 .social-links a i {
-    font-size: 64px;
+    font-size: 48px;
 }
 
 .social-links .substack-icon {
-    width: 64px;
-    height: 64px;
+    width: 42px;
+    height: 42px;
 }
 
 .social-links a:hover {
