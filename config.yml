@@ -33,12 +33,12 @@ languages:
           social: social  # Add social taxonomy
         menu: # set upper-right menu here
             main:
-                - name: CV
-                  url: cv/cv.pdf
-                  weight: 15
-                - name: Blog
-                  url: archives
-                  weight: 5
+                # - name: CV
+                #   url: cv/cv.pdf
+                #   weight: 15
+                # - name: Blog
+                #   url: archives
+                #   weight: 5
                 # - name: Search
                 #   url: search/
                 #   weight: 10
@@ -78,11 +78,11 @@ params:
         subtitle: "Welcome to my personal website"
         imageUrl: ""
         imageTitle: ""
-        buttons:
-            - name: Archives
-              url: archives
-            - name: CV
-              url: cv/cv.pdf
+        # buttons:
+        #     - name: Archives
+        #       url: archives
+        #     - name: CV
+        #       url: cv/cv.pdf
 
     # Move social icons here under params
     socialIcons:
