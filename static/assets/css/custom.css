@@ -1,0 +1,27 @@
+.social-links {
+    display: flex;
+    gap: 60px;
+    margin: 40px 0;
+    justify-content: center;
+}
+
+.social-links a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.social-links a i {
+    font-size: 48px;
+}
+
+.social-links .substack-icon {
+    width: 42px;
+    height: 42px;
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+}
