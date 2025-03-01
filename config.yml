@@ -38,7 +38,7 @@ languages:
                   url: /olympiad/
                   weight: 10
                 - identifier: schedule
-                  name: Talk with me!
+                  name: Wanna chat?
                   url: "https://calendly.com/mk8574-princeton/30min"
                   weight: 20
 
