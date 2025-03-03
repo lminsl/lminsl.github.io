@@ -55,6 +55,12 @@ params:
     author: Minjae
     # author: ["Me", "You"] # multiple authors
 
+    # Google AdSense configuration
+    adsense:
+        enabled: true
+        client: "ca-pub-3085197414455718" # Your AdSense client ID
+        slot: "" # Your AdSense ad slot ID
+
     defaultTheme: auto
     # disableThemeToggle: true
 
