@@ -41,13 +41,13 @@ $$\deg \left(P_1^n+P_2^n+\cdots+P_n^n-nP_1P_2\cdots P_n \right) = (n-2) \max_{1\
 </details>
 
 ### Online exams 
->#3 ([MOMO 2020 Problem 4][momo_2020_4]; read more about the exam [here][momo][^1]). Suppose that there exists a nonempty set $X \subset \mathbb{R}$ and a function $f: X \rightarrow X$ such that for $x, y \in X$, $f(x) +y \in X$ if and only if $x \neq y$. 
+>#3 ([MOMO 2020 Problem 4][momo_2020_4]; read more about the exam [here][momo][^1]). Suppose that there exist a nonempty set $X \subset \mathbb{R}$ and a function $f: X \rightarrow X$ such that for $x, y \in X$, $f(x) +y \in X$ if and only if $x \neq y$. 
 >   
 >Prove that there is a real constant $C$ for which $f(x) = - x + C$ for all $x \in X$.
 
 <details>
 <summary>Comment</summary>
-I deeply regret not sending this problem to the IMO. This is nontraditional yet nontrivial and has some connection with abstract algebra, which makes it more intriguing. 
+I deeply regret not sending this problem to the IMO. Nontraditional yet nontrivial, this problem also has connections with abstract algebra, which makes it more intriguing. 
 </details>
 
 
@@ -57,10 +57,10 @@ I deeply regret not sending this problem to the IMO. This is nontraditional yet 
 >        
 >- all but finitely many positive integers can be expressed in the form $\mathcal{S}(n_1t)+\cdots +\mathcal{S}(n_kt)$ for some positive integer $t$.
 
-<details>
+<!-- <details>
 <summary>Comment</summary>
 Very hard problem; the $k=1$ case isn't trivial either. 
-</details>
+</details> -->
 
 
 > #5 ([MOMO 2020 Problem 6][momo_2020_6]). Call a set of unit squares a *Thumbs-up sign* if it can be obtained by cutting out a unit square from a corner of a $2 \times m$ rectangle. For example, a single unit square and a L-tromino are both Thumbs-up signs. 
@@ -88,7 +88,7 @@ This is the very first problem I wrote as a middle-schooler. Still seems like a 
 
 <details>
 <summary>Comment</summary>
-The best geometry problem I've written. The statement's so simple yet so hard; no one I personally know managed to prove it. </details>
+The best geometry problem I've written. The statement's so simple yet so hard; no one I personally know managed to solve it.</details>
 
 
 >#8 (2019; school math club entrance exam). Let $p$ be a odd prime. Prove that among the divisors of $p-1$, the number of quadratic residues modulo $p$ is no less than that of non-quadratic residues modulo $p$.
@@ -99,9 +99,6 @@ The best geometry problem I've written. The statement's so simple yet so hard; n
 >- $\Omega(p) \neq 0$, and
 >- among the positive divisors of $|\Omega(p)|$, the number of quadratic residues and non-quadratic residues modulo $p$ are equal.
 
-<details>
-<summary>Comment</summary>
-The best geometry problem I've written. The statement's so simple yet so hard; no one I personally know managed to prove it. </details>
 
 
 > #9 (SMO 2018). Find all integers $n$ for which there exists a set $S$ of positive integers satisfying the following conditions:
