@@ -35,7 +35,7 @@ languages:
             main:
                 - identifier: math
                   name: math
-                  url: /math/
+                  url: /olympiad/
                   weight: 10
                 - identifier: chat
                   name: Chat?
