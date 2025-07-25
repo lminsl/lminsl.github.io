@@ -33,8 +33,8 @@ languages:
           social: social  # Add social taxonomy
         menu: # set upper-right menu here
             main:
-                - identifier: math
-                  name: math
+                - identifier: olympiad
+                  name: olympiad
                   url: /olympiad/
                   weight: 10
                 - identifier: chat
