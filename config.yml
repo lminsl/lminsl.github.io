@@ -37,8 +37,8 @@ languages:
                   name: olympiad
                   url: /olympiad/
                   weight: 10
-                - identifier: chat
-                  name: Chat?
+                - identifier: coffee chat
+                  name: coffee chat
                   url: "https://calendly.com/mk8574-princeton/30min"
                   weight: 20
 
