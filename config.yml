@@ -33,12 +33,12 @@ languages:
           social: social  # Add social taxonomy
         menu: # set upper-right menu here
             main:
-                - identifier: olympiad
-                  name: Olympiad
-                  url: /olympiad/
+                - identifier: math
+                  name: math
+                  url: /math/
                   weight: 10
                 - identifier: chat
-                  name: Coffee with me?
+                  name: Chat?
                   url: "https://calendly.com/mk8574-princeton/30min"
                   weight: 20
 
