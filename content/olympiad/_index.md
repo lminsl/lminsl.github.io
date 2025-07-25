@@ -47,7 +47,7 @@ $$\deg \left(P_1^n+P_2^n+\cdots+P_n^n-nP_1P_2\cdots P_n \right) = (n-2) \max_{1\
 
 <details>
 <summary>Comment</summary>
-I deeply regret not sending this problem to the IMO. Nontraditional yet nontrivial, this problem also has connections with abstract algebra, which makes it more intriguing. 
+I regret not sending this problem to the IMO. Nontraditional yet nontrivial, this problem also has connections with abstract algebra, which makes it more intriguing. 
 </details>
 
 
