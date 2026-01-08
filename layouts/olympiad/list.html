@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    {{ $css := resources.Get "css/stark.css" }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ partial "math.html" . }}
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Home</a>
+
+        <h1>{{ .Title }}</h1>
+
+        <div class="olympiad-content">
+            {{ .Content }}
+        </div>
+
+        <footer>
+            <a href="/">Home</a>
+        </footer>
+    </div>
+</body>
+</html>

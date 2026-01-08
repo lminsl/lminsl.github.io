@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    {{ $css := resources.Get "css/stark.css" }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ partial "math.html" . }}
+</head>
+<body>
+    <div class="container-narrow">
+        <a href="/" class="back-link">← Home</a>
+
+        <article>
+            <div class="problem-header">
+                <h1>{{ .Title }}</h1>
+            </div>
+
+            <div class="problem-content">
+                {{ .Content }}
+            </div>
+        </article>
+
+        <footer>
+            <a href="/">Home</a>
+            <a href="/olympiad">Olympiad</a>
+            <a href="/about">About</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    {{ $css := resources.Get "css/stark.css" }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ partial "math.html" . }}
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Home</a>
+
+        <h1>{{ .Title }}</h1>
+
+        {{ .Content }}
+
+        {{ if .Pages }}
+        <div class="grid">
+            {{ range .Pages }}
+            <article class="problem-card">
+                <h3>{{ .Params.competition }} {{ .Params.year }}</h3>
+                <h2><a href="{{ .Permalink }}">Problem {{ .Params.number }}</a></h2>
+                <div class="problem-meta">
+                    {{ if .Params.tags }}
+                    {{ range .Params.tags }}{{ . }} {{ end }}
+                    {{ end }}
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <footer>
+            <a href="/">Home</a>
+        </footer>
+    </div>
+</body>
+</html>

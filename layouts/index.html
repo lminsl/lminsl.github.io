@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    {{ $css := resources.Get "css/stark.css" }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{- if .Site.Params.math }}
+    {{ partial "math.html" . }}
+    {{- end }}
+</head>
+<body>
+    <div class="container-narrow">
+        <main>
+            <div class="header-with-image">
+                <h1>Minjae Kwon</h1>
+                <img src="/images/profile.jpg" alt="Minjae Kwon" class="profile-image">
+            </div>
+            <p class="lead">Builder, inventor, dreamer.</p>
+
+            <nav>
+                <a href="https://www.linkedin.com/in/minjae-kwon/">About</a>
+                <div class="nav-dropdown">
+                    <span class="nav-dropdown-toggle">Writing</span>
+                    <div class="nav-dropdown-content">
+                        <a href="https://minjaekwon.substack.com/">English</a>
+                        <a href="https://brunch.co.kr/@fdb2a4bd2218400">Korean</a>
+                    </div>
+                </div>
+                <a href="/olympiad">Olympiad</a>
+                <a href="https://x.com/minjaekwon_">X</a>
+            </nav>
+        </main>
+
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>
