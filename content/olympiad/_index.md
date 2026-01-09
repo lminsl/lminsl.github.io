@@ -2,6 +2,9 @@
 title: "Problems"
 draft: false
 math: true
+sitemap:
+  priority: 0.8
+  changefreq: monthly
 ---
 
 I've written a few problems for various math competitions in the past; here are some of my favorites, with some notes.

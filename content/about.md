@@ -1,6 +1,9 @@
 ---
 title: "About"
 draft: false
+sitemap:
+  priority: 0.7
+  changefreq: monthly
 ---
 
 I'm a mathematics student at Princeton University, currently building at Aleph Lab (YC F25).
