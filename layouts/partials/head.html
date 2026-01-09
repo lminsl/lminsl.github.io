@@ -42,3 +42,6 @@
 {{- if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
 {{- end }}
+
+{{- /* Structured Data (JSON-LD) for SEO */ -}}
+{{ partial "structured-data.html" . }}
