@@ -39,6 +39,10 @@ languages:
           social: social  # Add social taxonomy
         menu: # set upper-right menu here
             main:
+                - identifier: blog
+                  name: blog
+                  url: /blog/
+                  weight: 5
                 - identifier: olympiad
                   name: olympiad
                   url: /olympiad/
