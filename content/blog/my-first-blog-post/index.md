@@ -1,6 +1,6 @@
 ---
 title: "My First Blog Post"
-date: 2026-01-10T00:47:26+09:00
+date: 2026-01-10T08:23:16+09:00
 draft: false
 ---
 
@@ -18,8 +18,13 @@ Also, check out my [recent reflections](/blog/note-240710-요즘-가장-많이-�
 - Test with more posts
 - Deploy to lminsl.github.io
 
+Here's a test image:
+
+![test-image](/images/blog/test-image.png)
+
 This post contains:
 - A heading
 - Wikilinks with aliases
 - Korean text in links
 - A simple list
+- An embedded image

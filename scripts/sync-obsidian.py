@@ -4,7 +4,7 @@ Sync Obsidian blog posts to Hugo content directory.
 
 MIN-148: Core file processing (title extraction, frontmatter generation)
 MIN-149: Wikilink conversion
-MIN-150: Image handling (to be added)
+MIN-150: Image handling
 """
 
 import os
@@ -12,6 +12,7 @@ import re
 import shutil
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
 # Configuration
 OBSIDIAN_BLOG_DIR = Path("/Users/minjaekwon1/Documents/Obsidian Vault/blog")
@@ -77,6 +78,78 @@ def convert_wikilinks(content: str) -> str:
     return re.sub(r'(?<!!)\[\[([^\]]+)\]\]', replace_wikilink, content)
 
 
+def find_image(image_name: str, search_dirs: list) -> Optional[Path]:
+    """Search for an image file in multiple directories."""
+    for search_dir in search_dirs:
+        if not search_dir.exists():
+            continue
+
+        # Direct match in directory
+        candidate = search_dir / image_name
+        if candidate.exists():
+            return candidate
+
+        # Search recursively
+        for match in search_dir.rglob(image_name):
+            return match
+
+    return None
+
+
+def process_images(content: str, source_path: Path) -> tuple[str, list[Path]]:
+    """Process image embeds: convert syntax and collect images to copy.
+
+    ![[image.png]] → ![image](/images/blog/image.png)
+    """
+    images_to_copy = []
+    vault_root = OBSIDIAN_BLOG_DIR.parent
+    search_dirs = [
+        source_path.parent,  # Same folder as the note
+        OBSIDIAN_BLOG_DIR,   # Blog folder
+        vault_root / 'attachments',  # Common attachments folder
+        vault_root,          # Vault root (recursive search last)
+    ]
+
+    def replace_image(match):
+        image_ref = match.group(1)
+
+        # Handle path in image reference
+        image_name = image_ref.split('/')[-1]
+
+        # Remove any alias (e.g., ![[image.png|300]])
+        if '|' in image_name:
+            image_name = image_name.split('|')[0]
+
+        # Find the image file
+        image_path = find_image(image_name, search_dirs)
+
+        if image_path:
+            images_to_copy.append(image_path)
+            # Generate alt text from filename (without extension)
+            alt_text = image_name.rsplit('.', 1)[0]
+            return f'![{alt_text}](/images/blog/{image_name})'
+        else:
+            print(f"  WARNING: Image not found: {image_name}")
+            # Return broken image marker so it's visible
+            return f'![MISSING: {image_name}](/images/blog/{image_name})'
+
+    # Match ![[...]] image embeds
+    converted = re.sub(r'!\[\[([^\]]+)\]\]', replace_image, content)
+
+    return converted, images_to_copy
+
+
+def copy_images(images: list[Path]) -> int:
+    """Copy images to Hugo static directory."""
+    copied = 0
+    for image_path in images:
+        dest = HUGO_IMAGES_DIR / image_path.name
+        if not dest.exists() or image_path.stat().st_mtime > dest.stat().st_mtime:
+            shutil.copy2(image_path, dest)
+            copied += 1
+    return copied
+
+
 def get_file_date(filepath: Path) -> str:
     """Get file modification date in ISO format."""
     mtime = os.path.getmtime(filepath)
@@ -115,6 +188,9 @@ def process_file(source_path: Path) -> dict:
     # Convert wikilinks to standard markdown
     content = convert_wikilinks(content)
 
+    # Process images (convert syntax and collect images to copy)
+    content, images = process_images(content, source_path)
+
     # Generate frontmatter
     frontmatter = generate_frontmatter(title, date)
 
@@ -126,7 +202,8 @@ def process_file(source_path: Path) -> dict:
         'title': title,
         'slug': slug,
         'content': output_content,
-        'source': source_path
+        'source': source_path,
+        'images': images
     }
 
 
@@ -149,6 +226,7 @@ def sync_posts():
 
     synced = 0
     skipped = 0
+    images_copied = 0
 
     for source_path in md_files:
         result = process_file(source_path)
@@ -166,11 +244,16 @@ def sync_posts():
         output_path = output_dir / 'index.md'
         output_path.write_text(result['content'], encoding='utf-8')
 
+        # Copy images
+        if result['images']:
+            copied = copy_images(result['images'])
+            images_copied += copied
+
         print(f"  SYNC: {source_path.name} -> {result['slug']}/index.md")
         synced += 1
 
     print("-" * 50)
-    print(f"Done. Synced: {synced}, Skipped: {skipped}")
+    print(f"Done. Synced: {synced}, Skipped: {skipped}, Images: {images_copied}")
 
 
 if __name__ == '__main__':
