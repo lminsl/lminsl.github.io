@@ -47,8 +47,8 @@ outputs:
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     title: Minjae Kwon # change title name
-    description: "Minjae's webpage"
-    author: Minjae
+    description: "Princeton mathematics student, IMO silver medalist, and builder at Aleph Lab. Passionate about mathematical elegance and problem-solving."
+    author: Minjae Kwon
     # author: ["Me", "You"] # multiple authors
 
     # Google AdSense configuration
