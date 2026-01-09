@@ -3,7 +3,7 @@
 Sync Obsidian blog posts to Hugo content directory.
 
 MIN-148: Core file processing (title extraction, frontmatter generation)
-MIN-149: Wikilink conversion (to be added)
+MIN-149: Wikilink conversion
 MIN-150: Image handling (to be added)
 """
 
@@ -41,6 +41,42 @@ def remove_title_heading(content: str) -> str:
     return re.sub(r'^#\s+.+\n*', '', content, count=1, flags=re.MULTILINE)
 
 
+def convert_wikilinks(content: str) -> str:
+    """Convert Obsidian wikilinks to standard markdown links.
+
+    [[note]] → [note](/blog/note/)
+    [[note|alias]] → [alias](/blog/note/)
+    [[path/to/note]] → [note](/blog/note/)
+    [[path/to/note|alias]] → [alias](/blog/note/)
+    """
+    def replace_wikilink(match):
+        inner = match.group(1)
+
+        if '|' in inner:
+            path, alias = inner.split('|', 1)
+        else:
+            path = inner
+            alias = None
+
+        # Extract note name from path (last segment)
+        note_name = path.split('/')[-1]
+
+        # Clean up note name (remove any file extension)
+        if note_name.endswith('.md'):
+            note_name = note_name[:-3]
+
+        # Use alias if provided, otherwise use note name
+        display_text = alias if alias else note_name
+
+        # Create slug for the link
+        link_slug = slugify(note_name)
+
+        return f'[{display_text}](/blog/{link_slug}/)'
+
+    # Match [[...]] but not ![[...]] (images handled separately)
+    return re.sub(r'(?<!!)\[\[([^\]]+)\]\]', replace_wikilink, content)
+
+
 def get_file_date(filepath: Path) -> str:
     """Get file modification date in ISO format."""
     mtime = os.path.getmtime(filepath)
@@ -75,6 +111,9 @@ def process_file(source_path: Path) -> dict:
 
     # Remove title heading from content (will be in frontmatter)
     content = remove_title_heading(content)
+
+    # Convert wikilinks to standard markdown
+    content = convert_wikilinks(content)
 
     # Generate frontmatter
     frontmatter = generate_frontmatter(title, date)

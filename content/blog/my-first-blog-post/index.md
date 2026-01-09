@@ -8,9 +8,9 @@ This is a test post to verify the Obsidian to Hugo sync workflow.
 
 ## Why I'm Writing This
 
-I want to share some thoughts from my notes. For example, I've been thinking about ideas from [[reads/Zero to One, Peter Thiel|Zero to One]] lately.
+I want to share some thoughts from my notes. For example, I've been thinking about ideas from [Zero to One](/blog/zero-to-one-peter-thiel/) lately.
 
-Also, check out my [[writings/writings/C. aging/Note 240710 -- 요즘 가장 많이 말하는 고민|recent reflections]] on language and career.
+Also, check out my [recent reflections](/blog/note-240710-요즘-가장-많이-말하는-고민/) on language and career.
 
 ## What's Next
 
