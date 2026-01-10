@@ -14,7 +14,7 @@ hugo serve
 
 ## Workflow
 
-1. **Write** in Obsidian at `~/Documents/Obsidian Vault/blog/`
+1. **Copy** note to `~/Projects/obsidian/blog/` (keeps original in vault)
 2. **Sync** with `python3 scripts/sync-obsidian.py`
 3. **Commit** and push to deploy
 
@@ -30,9 +30,9 @@ hugo serve
 ## Directory Structure
 
 ```
-Obsidian Vault/
+~/Projects/obsidian/
 └── blog/
-    ├── my-post.md          # Source posts
+    ├── my-post.md          # Copied here to publish
     ├── _draft.md           # Skipped (underscore prefix)
     └── image.png           # Images
 
