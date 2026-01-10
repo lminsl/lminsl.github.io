@@ -64,3 +64,38 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Blog list styling */
+.blog-list {
+    margin-top: 2rem;
+}
+
+.blog-entry {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-entry h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+}
+
+.blog-entry h2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-entry h2 a:hover {
+    color: var(--secondary);
+}
+
+.blog-entry time {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.blog-entry p {
+    margin-top: 0.5rem;
+    color: #444;
+}

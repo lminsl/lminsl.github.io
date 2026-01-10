@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Optional
 
 # Configuration
-OBSIDIAN_BLOG_DIR = Path("/Users/minjaekwon1/Documents/Obsidian Vault/blog")
+OBSIDIAN_BLOG_DIR = Path("/Users/minjaekwon1/Projects/obsidian/blog")
 HUGO_CONTENT_DIR = Path("/Users/minjaekwon1/Projects/lminsl.github.io/content/blog")
 HUGO_IMAGES_DIR = Path("/Users/minjaekwon1/Projects/lminsl.github.io/static/images/blog")
 
@@ -42,13 +42,11 @@ def remove_title_heading(content: str) -> str:
     return re.sub(r'^#\s+.+\n*', '', content, count=1, flags=re.MULTILINE)
 
 
-def convert_wikilinks(content: str) -> str:
+def convert_wikilinks(content: str, existing_slugs: set) -> str:
     """Convert Obsidian wikilinks to standard markdown links.
 
-    [[note]] → [note](/blog/note/)
-    [[note|alias]] → [alias](/blog/note/)
-    [[path/to/note]] → [note](/blog/note/)
-    [[path/to/note|alias]] → [alias](/blog/note/)
+    [[note]] → [note](/blog/note/) if note exists, else just "note"
+    [[note|alias]] → [alias](/blog/note/) if note exists, else just "alias"
     """
     def replace_wikilink(match):
         inner = match.group(1)
@@ -72,7 +70,11 @@ def convert_wikilinks(content: str) -> str:
         # Create slug for the link
         link_slug = slugify(note_name)
 
-        return f'[{display_text}](/blog/{link_slug}/)'
+        # Only create link if target post exists
+        if link_slug in existing_slugs:
+            return f'[{display_text}](/blog/{link_slug}/)'
+        else:
+            return display_text  # Plain text, no link
 
     # Match [[...]] but not ![[...]] (images handled separately)
     return re.sub(r'(?<!!)\[\[([^\]]+)\]\]', replace_wikilink, content)
@@ -168,7 +170,19 @@ draft: {str(draft).lower()}
 """
 
 
-def process_file(source_path: Path) -> dict:
+def get_all_slugs(md_files: list) -> set:
+    """Pre-scan all files to get their slugs."""
+    slugs = set()
+    for source_path in md_files:
+        if source_path.name.startswith('_'):
+            continue
+        content = source_path.read_text(encoding='utf-8')
+        title = extract_title(content, source_path.name)
+        slugs.add(slugify(title))
+    return slugs
+
+
+def process_file(source_path: Path, existing_slugs: set) -> dict:
     """Process a single Obsidian markdown file."""
     content = source_path.read_text(encoding='utf-8')
     filename = source_path.name
@@ -185,8 +199,8 @@ def process_file(source_path: Path) -> dict:
     # Remove title heading from content (will be in frontmatter)
     content = remove_title_heading(content)
 
-    # Convert wikilinks to standard markdown
-    content = convert_wikilinks(content)
+    # Convert wikilinks to standard markdown (only link to existing posts)
+    content = convert_wikilinks(content, existing_slugs)
 
     # Process images (convert syntax and collect images to copy)
     content, images = process_images(content, source_path)
@@ -224,12 +238,16 @@ def sync_posts():
         print("No markdown files found in blog folder.")
         return
 
+    # Pre-scan to get all slugs (for smart linking)
+    existing_slugs = get_all_slugs(md_files)
+    print(f"Found {len(existing_slugs)} posts to sync")
+
     synced = 0
     skipped = 0
     images_copied = 0
 
     for source_path in md_files:
-        result = process_file(source_path)
+        result = process_file(source_path, existing_slugs)
 
         if result['status'] == 'skipped':
             print(f"  SKIP: {source_path.name} ({result['reason']})")
