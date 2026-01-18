@@ -239,7 +239,15 @@ nav a:hover {
 
 /* Problem sections in main content */
 .olympiad-content {
-  margin-top: 64px;
+  margin-top: 48px;
+}
+
+/* Olympiad page title - refined scale */
+.container:has(.olympiad-content) > h1 {
+  font-size: 42px;
+  border-bottom-width: 2px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
 }
 
 .olympiad-content a {
@@ -248,13 +256,14 @@ nav a:hover {
 
 .olympiad-content > blockquote {
   border: 2px solid var(--black);
-  padding: 48px;
-  margin: 48px 0;
+  padding: 40px 44px;
+  margin: 36px 0;
   background: var(--white);
   position: relative;
   transition: all 0.2s ease;
   color: var(--black);
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 .olympiad-content > blockquote:hover {
@@ -264,17 +273,19 @@ nav a:hover {
 
 /* Problem number styling */
 .olympiad-content > blockquote > p:first-child {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  font-size: 17px;
 }
 
 .olympiad-content > blockquote > p:first-child::before {
   content: "Problem ";
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--gray-3);
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 
 /* Center tag inside blockquotes */
@@ -286,15 +297,17 @@ nav a:hover {
   text-align: left;
 }
 
+/* Section headers - prominent but refined */
 .olympiad-content > h3 {
-  font-size: 14px;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-top: 96px;
-  margin-bottom: 32px;
-  padding-bottom: 16px;
+  letter-spacing: 0.15em;
+  margin-top: 72px;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
   border-bottom: 2px solid var(--black);
-  font-weight: 400;
+  font-weight: 600;
+  color: var(--black);
 }
 
 /* Individual Problem */
@@ -461,7 +474,17 @@ blockquote {
   }
 
   .olympiad-content > blockquote {
-    padding: 32px 24px;
+    padding: 28px 24px;
+    font-size: 16px;
+  }
+
+  .container:has(.olympiad-content) > h1 {
+    font-size: 32px;
+  }
+
+  .olympiad-content > h3 {
+    font-size: 12px;
+    margin-top: 56px;
   }
 
   details {
